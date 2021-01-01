@@ -8,6 +8,8 @@ import t2 from '../assets/teams/liquid.png';
 import t3 from '../assets/teams/alliance.png';
 import t4 from '../assets/teams/secret.png';
 import t5 from '../assets/teams/nigma.png';
+import t6 from '../assets/new3.jpg';
+import t7 from '../assets/new2.png';
 
 const accessToken = "UgckNpMpIjzgZdmv2EOhWWkGHNHI_XNx1jzMWgxh63UYuats-ec";
 const apiUrl = "https://api.pandascore.co/dota2/tournaments/running";
@@ -71,8 +73,8 @@ export default function Matches() {
           </div>
           <div className="right-col">
             <div className="right-header">Upcoming Matches</div>
-            <br/>
-            <div className="match-list">
+            
+            <div className="match-list mt-3">
               <div className="match-header d-flex justify-content-between py-1 px-2">
                 <span>Best Of 3</span>
                 <span>Dec 3-20</span>
@@ -122,6 +124,46 @@ export default function Matches() {
                 </div>
               </div>
             </div>
+              <br/>
+              <div className="news">
+                <div className="right-header">Latest Post</div>
+                <br/> 
+                <div className="post">
+                  <img src={t6} alt="post"/><br/>
+                  <h4><b>The International Nine(Ti9)</b></h4>
+                  <p className="pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry... </p>
+                </div>
+              </div>
+              <div className="news">
+                <div className="right-header">Next Event</div>
+                <div className="post">
+                  <img src={t7} height="150px" alt="post"/><br/>
+                  <h5 className="py-3"><b>ESL One Championship : Shan Hi</b></h5>
+                </div>
+              </div>
+              
+              <div className="social">
+                <div className="right-header">Follow Us :</div>
+                <br/> 
+                <div className="social-icon-list d-flex justify-content-around">
+                  <div className="social-icon facebook">
+                    <i className="fab fa-facebook-f"></i>
+                  </div>
+                  <div className="social-icon google">
+                    <i className="fab fa-google"></i>
+                  </div>                  
+                  <div className="social-icon steam">
+                    <i className="fab fa-steam"></i>
+                  </div>
+                  <div className="social-icon wechat">
+                    <i className="fab fa-weixin"></i>
+                  </div>
+                  <div className="social-icon twitch">
+                    <i className="fab fa-twitch"></i>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>

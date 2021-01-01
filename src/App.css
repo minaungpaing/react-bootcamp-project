@@ -65,7 +65,7 @@ nav{
 .right-col{
   width: 34%;
   margin-left: 1%;
-  height: 58vh;
+  height: 56vh;
   background: #161421;
 }
 .right-col .right-header{
@@ -208,9 +208,45 @@ a:hover .card img{
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-.player-card:hover{
+.player-card:hover,.news:hover{
   box-shadow: 2px 5px 15px crimson;
   cursor: pointer;
+}
+.social{
+  height: 130px;
+  background: var(--bgColor);
+  border-radius: 3px;
+}
+.social-icon-list{
+  padding: 0 25px;
+}
+.social-icon{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.facebook{background: #3b5998;}
+.google{background: rgb(240, 46, 20);}
+.steam{background: #2a475e;}
+.twitch{background: #6441a5;}
+.wechat{background: #7bb32e;}
+
+.news{
+  background: var(--bgColor);
+  height: auto;
+  border-radius: 3px;
+}
+.post{
+  padding:0 15px;
+}
+.post img{
+  width: 100%;
+}
+.post h4{
+  padding: 5px 0;
 }
 
 
