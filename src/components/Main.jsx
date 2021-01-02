@@ -11,40 +11,56 @@ import t5 from '../assets/teams/nigma.png';
 import t6 from '../assets/new3.jpg';
 import t7 from '../assets/new2.png';
 
+import HashLoader from "react-spinners/HashLoader";
+
 const accessToken = "UgckNpMpIjzgZdmv2EOhWWkGHNHI_XNx1jzMWgxh63UYuats-ec";
-const apiUrl = "https://api.pandascore.co/dota2/tournaments/running";
+const apiUrl = "https://cors-anywhere.herokuapp.com/https://api.pandascore.co/dota2/tournaments/running";
 
 const authAxios = axios.create({
   baseURL: apiUrl,
   headers: {
     Authorization: `Bearer ${accessToken}`,
+    'X-Requested-With':"",
   },
 });
 
 export default function Matches() {
   const [items, setMatches] = useState([]);
-  // const [requestError,setRequestError] = useState([]);
+  const [loading,setLoading] = useState(false);
 
   useEffect(() => {
     getMatches();
   }, []);
 
   const getMatches = async () => {
+    setLoading(true);
     const response = await authAxios.get(`${apiUrl}`);
     setMatches(response.data);
+    setLoading(false);
   };
-  console.log(items);
-  // const tests= items.filter(item => item.league.name === 'Epic League' )
 
   return (
-    <div className="banner">
-      <div style={{ height: "100px" }}></div>
+
+    <>
+    {
+      loading ? (
+        <div className="loading">
+          <div className="loading-icon">
+            <HashLoader size={50} color={'#dc143c'} loading={loading}/>
+            <span className="ml-2">Loading...</span>
+          </div>
+        </div>
+      ):(
+        <div className="banner">
+      
       <div className="container">
+        <div style={{height:"100px"}}></div>
         <div className="main-banner">
           <img src={banner} alt="home-banner" />
         </div>
 
-        <div className="main-col">
+     
+          <div className="main-col">
           <div className="left-col">
             {items.map((test) => (
               <div
@@ -166,7 +182,12 @@ export default function Matches() {
               </div>
           </div>
         </div>
+
       </div>
     </div>
+      )
+    }
+    
+    </>
   );
 }

@@ -3,32 +3,49 @@ import axios from "axios";
 import logo from "../assets/d2.png";
 import Player from './Player'
 
+import HashLoader from "react-spinners/HashLoader";
+
 
 function SingleTeam({ match }) {
   const accessToken = "UgckNpMpIjzgZdmv2EOhWWkGHNHI_XNx1jzMWgxh63UYuats-ec";
 
-  const apiUrl = `https://api.pandascore.co/teams/${match.params.id}`;
+  const apiUrl = `https://cors-anywhere.herokuapp.com/https://api.pandascore.co/teams/${match.params.id}`;
 
   const authAxios = axios.create({
     baseURL: apiUrl,
     headers: {
       Authorization: `Bearer ${accessToken}`,
+      'X-Requested-With':"",
     },
   });
 
   const [teams, setTeam] = useState([]);
+  const [loading,setLoading] = useState(false);
 
   useEffect(() => {
     getTeam();
   }, []);
 
   const getTeam = async () => {
+    setLoading(true);
     const response = await authAxios.get(`${apiUrl}`);
     setTeam(response.data);
+    setLoading(false);
   };
 
   return (
-    <div className="container">
+
+    <>
+       {
+        loading ? (
+            <div className="loading">
+            <div className="loading-icon">
+                <HashLoader size={50} color={'#dc143c'} loading={loading}/>
+                <span className="ml-2">Loading...</span>
+            </div>
+            </div>
+        ):(
+      <div className="container">
       <div style={{ height: "100px" }}></div>
       <div className="team-header d-flex justify-content-between mb-3">
         <div className="team-name">
@@ -69,6 +86,9 @@ function SingleTeam({ match }) {
         of Lorem Ipsum.
       </div>
     </div>
+    )}
+    </>
+    
   );
 }
 

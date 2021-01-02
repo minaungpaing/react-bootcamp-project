@@ -22,10 +22,10 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
-          <Route exact path="/" component={Main}></Route>
-          <Route exact path="/schedule" component={Schedule}></Route>
-          <Route exact path="/team" component={Team}></Route>
-          <Route exact path="/team/:id" component={SingleTeam}></Route>
+          <Route exact path={`${process.env.PUBLIC_URL}/`} component={Main}></Route>
+          <Route exact path={`${process.env.PUBLIC_URL}/schedule`} component={Schedule}></Route>
+          <Route exact path={`${process.env.PUBLIC_URL}/team`} component={Team}></Route>
+          <Route exact path={`${process.env.PUBLIC_URL}/team/:id`} component={SingleTeam}></Route>
           <Route path="*" component={Notfound}></Route>
         </Switch>
         <Footer/>

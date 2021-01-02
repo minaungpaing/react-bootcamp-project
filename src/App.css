@@ -250,6 +250,14 @@ a:hover .card img{
   padding: 5px 0;
 }
 
+.loading-icon{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 footer{
   height: 75px;
