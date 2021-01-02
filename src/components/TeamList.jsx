@@ -11,7 +11,7 @@ function TeamList({ teams,teamIds }) {
       <div className="row">
         {teams.map((list) => (
           <div className="col-sm-4" key={list.id}>
-            <Link to={`${process.env.PUBLIC_URL}/schedule/team/${list.id}`}>
+            <Link to={`/team/${list.id}`}>
               <div className="card">
                 <center>
                   {list.image_url != null ? (

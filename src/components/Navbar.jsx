@@ -29,23 +29,23 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/team`} className="nav-link" >
+                <Link to="/team" className="nav-link" >
                   TEAMS
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/schedule}`} className="nav-link" >
+                <Link to="schedule" className="nav-link" >
                   SCHEDULE
                 </Link>
               </li>
               
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/login}`} className="nav-link">
+                <Link to="/login" className="nav-link">
                   <i className="fa fa-user mr-2"></i> LOGIN
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/`} className="nav-link">
+                <Link to="/" className="nav-link">
                   <i className="fa fa-search mr-2"></i>
                 </Link>
               </li>
