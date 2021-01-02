@@ -44,6 +44,7 @@ nav{
   background: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.85)),url("../src/assets/default.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 .main-banner{
