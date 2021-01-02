@@ -6,7 +6,7 @@ function Navbar() {
     <>
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
             <div className="container">
-          <Link to="/" className="navbar-brand" href="#">
+          <Link to={`${process.env.PUBLIC_URL}/`} className="navbar-brand" href="#">
             <b><h3>DOTA<font color="crimson">League</font></h3></b> 
           </Link>
           <button
@@ -24,28 +24,28 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to={`${process.env.PUBLIC_URL}/`} className="nav-link">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/Team" className="nav-link" >
+                <Link to={`${process.env.PUBLIC_URL}/team`} className="nav-link" >
                   TEAMS
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/schedule" className="nav-link" >
+                <Link to={`${process.env.PUBLIC_URL}/schedule}`} className="nav-link" >
                   SCHEDULE
                 </Link>
               </li>
               
               <li className="nav-item">
-                <Link to="/login" className="nav-link">
+                <Link to={`${process.env.PUBLIC_URL}/login}`} className="nav-link">
                   <i className="fa fa-user mr-2"></i> LOGIN
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link to={`${process.env.PUBLIC_URL}/`} className="nav-link">
                   <i className="fa fa-search mr-2"></i>
                 </Link>
               </li>
